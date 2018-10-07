@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+
+	<title>긁긁</title>
+<style>
+body {
+  background: url(tum.gif);
+
+}
+
+.center {
+  position: absolute;
+  margin: auto;
+  top:0; bottom:0;
+  left:0; right:0;
+}
+
+.center2 {
+  position: absolute;
+  margin: auto;
+  top:500px; bottom:0;
+  left:0; right:900px;
+}
+
+.center3 {
+  position: absolute;
+  margin: auto;
+  top:-600px; bottom:0;
+  left:0; right:1400px;
+}
+
+.center4 {
+  position: absolute;
+  margin: auto;
+  top:-700px; bottom:0;
+  left:550px; right:0px;
+
+}
+
+#bro {position: absolute;top:0;left:1200px; height: 100px; width: auto;}
+ #bro:hover {position: absolute; top:0;left:500px; height: 100px; width: auto;}
+
+#coco {position: absolute; top:100px;left:220px; height: 100px; width: auto; z-index: 4;cursor:pointer;}
+
+
+
+.header {
+  width: 100%;
+  height: 100px;
+  color: #10A3FF;
+  opacity: 0.95;
+  font-family: sans-serif;
+  font-size: 120px;
+  text-align: center;
+}
+.header:before {
+  position: absolute;
+  content: attr(data-text);
+  color: yellow;
+  opacity: 0.8;
+  font-family: sans-serif;
+  font-size: 150px;
+  text-align: center;
+  mix-blend-mode: multiply;
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);  
+-webkit-animation: glitch 0.5s infinite linear;  
+        animation: glitch 0.5s infinite linear;
+}
+
+
+.headerr {
+  width: 100%;
+  height: 100px;
+  color: blue;
+  opacity: 0.95;
+  font-family: sans-serif;
+  font-size: 50px;
+  text-align: center;
+}
+.headerr:before {
+  position: absolute;
+  content: attr(data-text);
+  color: yellow;
+  opacity: 0.8;
+  font-family: sans-serif;
+  font-size: 50px;
+  text-align: center;
+  mix-blend-mode: multiply;
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);  
+-webkit-animation: glitch 0.5s infinite linear;  
+        animation: glitch 0.5s infinite linear;
+}
+
+.headerrr {
+  width: 100%;
+  height: 100px;
+  color: white;
+  opacity: 0.95;
+  font-family: sans-serif;
+  font-size: 180px;
+  text-align: center;
+}
+
+.headerrr:before {
+  position: absolute;
+  content: attr(data-text);
+  color: black;
+  opacity: 0.8;
+  font-family: sans-serif;
+  font-size: 150px;
+  text-align: center;
+  mix-blend-mode: multiply;
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-120px);  
+-webkit-animation: glitch 0.5s infinite linear;  
+        animation: glitch 2s infinite linear;
+}
+.headerrry {
+  width: 100%;
+  height: 100px;
+  color: yellow;
+  opacity: 0.95;
+  font-family: sans-serif;
+  font-size: 120px;
+  text-align: center;
+}
+.headerrry:before {
+  position: absolute;
+  content: attr(data-text);
+  color: green;
+  opacity: 0.8;
+  font-family: sans-serif;
+  font-size: 100px;
+  text-align: center;
+  mix-blend-mode: multiply;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(600px);  
+
+        animation: drop 2s infinite linear;
+}
+
+
+
+@-webkit-keyframes glitch {
+  50% {
+    -webkit-transform: translateX(7px);
+            transform: translateX(7px);  
+  }
+
+  
+}
+
+#circle{width: 30px; height: 30px; background: blue; position: absolute; border-radius: 50%; animation:drop 3.5s infinite;}
+
+		@keyframes drop{
+
+				from{margin-top:0;}
+
+				to{margin-top:200px; }
+
+ 
+
+		}
+
+</style>
+</head>
+
+<body>
+
+	<audio id="mp1" src="cara.mp3" autoplay="true" loop="" preload="auto" currenTime = 0;></audio>
+	
+	<div id="circle"></div>
+
+<div id="bro">
+	<img src="bbbro.gif">
+</div>
+
+<div id="coco">
+	<img src="coo.gif" onclick="a()">
+</div>
+
+<div class="center">
+
+  <h1 class="header center" data-text="random" id="word">random</h1>
+</div>
+
+
+<div class="center2">
+	 <h1 class="headerr center" data-text="따뜻한 아메는 안팔아요!" id="word">따뜻한 아메는 안팔아요!</h1>
+</div>
+<div class="center3">
+
+  <h1 class="headerrr center" data-text="빨대는 이쪽" id="word">따<br>듯<br>한<br> 아<br>메<br>요</h1>
+</div>
+
+<div class="center4">
+
+  <h1 class="headerrry center" data-text="Math.random()" id="word">Math.random()</h1>
+</div>
+
+	<script type="text/javascript">
+		var word = document.getElementById('word');
+var colors = ['red', 'yellow'];
+var letters = 
+    ['안','녕','하','세','요','서','재','현','어','쩌','라','고','뭐','야','어','려','워','히','깔','좋','아','병','커','피','주','세','요','%','&','!','0','1','2','3','4','5','6','7','8','9'];
+
+var skip = 4;
+var counter = 0;
+ var w = 0;
+ var toggle = "off";
+
+
+
+ coco.onclick = function(){
+	if(toggle=="off"){
+
+		mp1.pause();
+		toggle="on";
+		mp1.currenTime = 0;
+		}else if(toggle=="on")
+		{mp1.play();
+		toggle="off"; }
+}
+
+
+var swap = function() {
+    
+  if(counter++ == skip) {
+    randWord = 
+      letters[Math.floor(Math.random()*30)]
+    + letters[Math.floor(Math.random()*39)]
+    + letters[Math.floor(Math.random()*39)]
+    + letters[Math.floor(Math.random()*39)];
+    + letters[Math.floor(Math.random()*39)];
+    + letters[Math.floor(Math.random()*39)];
+    word.innerHTML = randWord;
+    word.dataset.text = randWord;
+    
+    counter = 0;
+  }
+  window.requestAnimationFrame(swap);
+}
+
+
+swap();
+
+
+for(var i=0;i<10;i++){
+
+			var t = document.getElementById("circle")
+
+			var k = t.cloneNode(true);
+
+ 
+
+			k.style.left = Math.random()*innerWidth+"px";
+
+		k.style.top = Math.random()*innerHeight+"px";
+
+		
+
+		k.style.background = "pink";
+
+		document.body.appendChild(k);
+
+		var time = Math.random();
+
+		k.style.animationDuration=time+"s";
+
+		k.style.background = makeColor();
+
+		document.body.appendChild(k);
+
+		}
+
+ 
+
+ 
+
+ 
+
+		function makeColor(){
+
+			var a = Math.ceil(Math.random()*255);
+
+			var b = Math.ceil(Math.random()*255);
+
+			var c = Math.ceil(Math.random()*255);
+
+			var text = "rgb("+a+","+b+","+c+")";
+
+			console.log(text)
+
+			return text;}
+
+
+		
+
+		
+	</script>
+</body>
+</html>
